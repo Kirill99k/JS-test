@@ -181,14 +181,21 @@
 //         break;
 // }
 
-// Task 9 
-// НАПИШІТЬ ЦИКЛ FOR ЯКА БУДЕ ВИВОДИТИ У КОНСОЛЬ ЧИСЛА ЗА ЗРОСТАННЯМ ВІД MIN ДО MAX, ПІСЛЯ ТОГО ЧИСЛА КРАТНІ 10 
+// Task 9
+// НАПИШІТЬ ЦИКЛ FOR ЯКА БУДЕ ВИВОДИТИ У КОНСОЛЬ ЧИСЛА ЗА ЗРОСТАННЯМ ВІД MIN ДО MAX, ПІСЛЯ ТОГО ЧИСЛА КРАТНІ 10
+// const min = 10;
+// const max = 100;
 
+// for (let iteration = min; iteration <= max; iteration += 1) {
+//     if (iteration % 10 === 0) {
+//         console.log(iteration);
+//     }
+// }
 
 
 
 // Task 10 
 // НАПИШІТЬ ПРОГРАМУ, ЯКА БУДЕ ВИЗНАЧАТИ ДОВЖИНУ ІМЕНІ , ЯКЩО ІМЯ БІЛЬШЕ 7 СИМВОЛІВ, КОНСОЛЬ ВИВОДИТЬ "Wow, you  have a REALLY long name!" , ЯКЩО МЕНШЕ 7 
 // "Your name isn't very long"
-
+// const whatName = prompt('What first name?');?
 
