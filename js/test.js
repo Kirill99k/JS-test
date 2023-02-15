@@ -1,3 +1,7 @@
+'use strict';
+
+
+
 // function checkAge(age) {
 //   if (age >= 18) { // Change this line
 //     return "You are an adult";
@@ -31,7 +35,7 @@
 //   }
 //   return total;
 // }
- 
+
 // console.log(calculateTotalPrice([12, 85, 37, 4]));
 // console.log(calculateTotalPrice([164, 48, 291]));
 
@@ -60,7 +64,7 @@
 
 // Напиши функцію slugify(string) яка отримує рядок і повертає URL-slug
 // Рядок складається тільки з літер і пробілів
-  
+
 
 // const findSmallesNumber = function (numbers) {
 //   let smallestNumber = numbers[0];
@@ -81,11 +85,11 @@
 
 // function createArrayOfNumbers(min, max) {
 //   const numbers = [];
-  
+
 // for(let i = min; i <= max; i++) {
 //   numbers.push(i);
 //   }
-  
+
 //   return numbers;
 // }
 
@@ -117,12 +121,211 @@
 
 // function getEvenNumbers(start, end) {
 //   const evenNumbers = [];
-  
+
 // for (let i = start; i <= end; i++) {
 //   if (i % 2 === 0) {
 //      evenNumbers.push(i);
 //   }
- 
+
 // }
 //   return numbers;
 // }
+
+
+
+// Method filter()
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Полі", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Ківі", score: 94 },
+//   { name: "Х'юстон", score: 64 },
+// ];
+
+// const best = students.filter(student => student.score >= HIGH_SCORE);
+// console.log(best); // Масив об'єктів з іменами Манго і Ківі
+
+// const worst = students.filter(student => student.score < LOW_SCORE);
+// console.log(worst); // Масив з одним об'єктом Аякс
+
+// // В колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Масив об'єктів з іменами Полі і Х'юстон
+
+
+// Method find()
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// console.log(colorPickerOptions.find(option => option.label === "blue"));// { label: 'blue', color: '#2196F3' }
+// console.log(colorPickerOptions.find(option => option.label === "pink"));// { label: 'pink', color: '#E91E63' }
+// console.log(colorPickerOptions.find(option => option.label === "white"));// undefined
+
+
+// Method findIndex()
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// console.log(colorPickerOptions.findIndex(option => option.label === "blue"));// 2
+// console.log(colorPickerOptions.findIndex(option => option.label === "pink"));// 3
+// console.log(colorPickerOptions.findIndex(option => option.label === "white"));// -1
+
+
+// Method reduce()
+
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// console.log(total); // 32
+
+
+
+// Method chains
+
+// const students = [
+//   { name: "Манго", score: 83, courses: ["математика", "фізика"] },
+//   { name: "Полі", score: 59, courses: ["інформатика", "математика"] },
+//   { name: "Аякс", score: 37, courses: ["фізика", "біологія"] },
+//   { name: "Ківі", score: 94, courses: ["література", "інформатика"] },
+// ];
+
+// const names = [...students]
+//   .sort((a, b) => a.score - b.score)
+//   .map(student => student.name);
+
+// const uniqueSortedCourses = students
+//   .flatMap(student => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .sort((a, b) => a.localeCompare(b));
+
+// console.log(names); // ['Аякс', 'Полі', 'Манго', 'Ківі']
+// console.log(uniqueSortedCourses); // ['біологія', 'інформатика', 'література', 'математика', 'фізика']
+
+
+// Change code below this line
+// const sortByDescendingFriendCount = users => {
+
+//   return [...users].sort((firstFriends, secondFriends) => secondFriends.friends.length - firstFriends.friends.lengt);
+// };
+
+
+
+
+// const CounterPlugin = function ({
+//   rootSelector,
+//   initialValue = 0,
+//   step = 1,
+//   onUpdate = () => null,
+// } = {}) {
+//   this._value = initialValue;
+//   this._step = step;
+//   this._refs = this._getRefs(rootSelector);
+
+//   this.onUpdate = onUpdate;
+
+//   this._bindEvents();
+//   this.updateValueUI();
+// };
+
+// CounterPlugin.prototype._getRefs = function (rootSelector) {
+//   const refs = {};
+//   refs.container = document.querySelector(rootSelector);
+//   refs.incrementBtn = refs.container.querySelector('[data-increment]');
+//   refs.decrementBtn = refs.container.querySelector('[data-decrement]');
+//   refs.value = refs.container.querySelector('[data-value]');
+
+//   return refs;
+// };
+
+// CounterPlugin.prototype._bindEvents = function () {
+//   this._refs.incrementBtn.addEventListener('click', () => {
+//     console.log('CounterPlugin.prototype._bindEvents -> this', this);
+//     this.increment();
+//     this.updateValueUI();
+//   });
+
+//   this._refs.decrementBtn.addEventListener('click', () => {
+//     console.log('CounterPlugin.prototype._bindEvents -> this', this);
+//     this.decrement();
+//     this.updateValueUI();
+//   });
+// };
+
+// CounterPlugin.prototype.updateValueUI = function () {
+//   this._refs.value.textContent = this._value;
+
+//   this.onUpdate();
+// };
+
+// CounterPlugin.prototype.increment = function () {
+//   this._value += this._step;
+// };
+
+// CounterPlugin.prototype.decrement = function () {
+//   this._value -= this._step;
+// };
+
+// new CounterPlugin({
+//   rootSelector: '#counter-1',
+//   step: 10,
+//   initialValue: 100,
+//   onUpdate: () => console.log('Это мой кастомный колбек для onUpdate'),
+// });
+
+// new CounterPlugin({ rootSelector: '#counter-2', step: 2 });
+
+
+
+// const customer = {
+//   username: "Mango",
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ["Burger", "Pizza", "Salad"],
+//   // Change code below this line
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getDiscount() {
+//     return this.discount;
+//   },
+//   setDiscount(value) {
+//     this.discount = value;
+//   },
+//   getOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost - cost * this.discount;
+//     this.orders.push(order);
+//   },
+//   // Change code above this line
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, "Steak");
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+
+
+
+
