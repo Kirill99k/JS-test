@@ -327,5 +327,36 @@
 
 
 
+//   Напиши метод calcTotalPrice(stoneName), який приймає назву
+//   каменю, розраховує та повертає загальну вартість каміння з таким
+//   ім'ям із властивості stones
 
+
+// const chopShop = {
+//     stones: [
+//         { name: 'Emerald', price: 1500, quantity: 5 },
+//         { name: 'Diamond', price: 2800, quantity: 2 },
+//         { name: 'Sapphire', price: 1400, quantity: 9 },
+//         { name: 'Ruby', price: 700, quantity: 8 },
+//     ],
+
+
+//     calcTotalPrice(stoneName) {
+//         const stoneOblj = this.stones.find(({ name }) => name.toLowerCase() === stoneName.trim().toLowerCase()
+//         );
+
+//         if(!stoneOblj) {
+//         return `Камінь з назвою ${stoneName} не має!`;
+//         }
+        
+//         const { price, quantity } = stoneOblj;
+        
+//         return price * quantity;
+
+//     },
+// }
+
+
+// console.log(chopShop.calcTotalPrice('Emerald')); //7500
+// console.log(chopShop.calcTotalPrice('Sapphire')); //12600
 
